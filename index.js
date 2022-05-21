@@ -6,6 +6,7 @@ const dbConfig = require("./config/db.config");
 const auth = require("./middlewares/auth.js");
 const errors = require("./middlewares/errors.js");
 const unless = require("express-unless");
+var nodemailer = require("nodemailer");
 
 // connect to mongodb
 
@@ -31,6 +32,8 @@ mongoose
       console.log("Database can't be connected: " + error);
     }
   );
+// get node mailer
+
 
 // middleware for authenticating token submitted with requests
 /**
@@ -44,6 +47,7 @@ app.use(
       { url: "/users/register", methods: ["POST"] },
       { url: "/users/otpLogin", methods: ["POST"] },
       { url: "/users/verifyOTP", methods: ["POST"] },
+      { url: "/users/OTP", methods: ["POST"] },
     ],
   })
 );
@@ -60,5 +64,5 @@ app.use(errors.errorHandler);
 // listen for requests
 app.listen(process.env.port || 4000, function () {
   console.log('Now listening for requests 🚀');
-    console.log('http://localhost:4000/api');
+  console.log('http://localhost:4000/api');
 });

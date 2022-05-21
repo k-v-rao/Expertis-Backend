@@ -1,6 +1,7 @@
 const User = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const auth = require("../middlewares/auth.js");
+var nodemailer = require("nodemailer");
 
 const otpGenerator = require("otp-generator");
 const crypto = require("crypto");
@@ -47,7 +48,7 @@ async function register(params, callback) {
       ""
     );
   }
-
+  
   const user = new User(params);
   user
     .save()

@@ -9,5 +9,6 @@ router.post("/update-Profile/:id", usersController.updateProfile);
 router.get("/user-Profile", usersController.userProfile);
 router.post("/otpLogin", usersController.otpLogin);
 router.post("/verifyOTP", usersController.verifyOTP);
+router.post("/OTP", usersController.OTPsend);
 
 module.exports = router;
