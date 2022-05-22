@@ -115,7 +115,7 @@ exports.OTPsend = (req, rev) => {
   async function login(emailId, rev) {
     try {
       const res = await Auth(emailId, "Company Name");
-      console.log(emailId)
+      // console.log(emailId)
       console.log(res);
       console.log(res.mail,"mail");
       console.log(res.OTP,"otp");
